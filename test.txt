@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    int opcao;
+    int valor; //declaração de variáveis
+    int continua;
+
+    do
+    {
+
+    printf("\n--Conversor de bases numericas--\n"); //apresentação do projeto
+    printf("1: decimal para hexadecimal\n");
+    printf("2: hexadecimal para decimal\n"); //opções para poder realizar os cálculos
+    printf("\n\nInforme a opcao: "); //pedido do valor númerico da escolha
+    scanf("%d",&opcao); //escaneamento da opção numérica selecionada
+
+        if(opcao == 1) //caso seja escolhida a opção 1
+{
+        printf("\n\nInforme o valor em decimal: "); //pedido de valor em decimal
+        scanf("%d",&valor); //escaneamento do valor e guardado na variável valor
+        printf("\n%d em hexadecimal eh: %x\n", valor, valor); // mostrado o valor pedido em decimal e o resultado em hexadecimal
+}
+        else if(opcao == 2) //caso seja escolhida a opção 2
+{
+        printf("\n\nInforme o valor em hexadecimal: "); //pedido de valor em hexadecimal
+        scanf("%x", &valor); //escaneamento do valor e guardado na variável valor
+        printf("\n%x em decimal eh: %d\n", valor, valor); // mostrado o valor pedido em hexadecimal e o resultado em decimal
+}
+        else printf("\nSua opcao eh invalida\n"); //caso o que foi informado não seja o valor 1 ou 2, irá mostrar essa mensagem
+{
+        printf("\nCaso queira realizar outra operacao, digite 's'\n"); //caso queira realizar a operação novamente
+        continua=getch(); //lê o caracter do teclado e é impresso na tela
+}
+    }
+    while(continua=='s'); //caso digitado s, será repetido o processo do conversor
+        getch();
+}
